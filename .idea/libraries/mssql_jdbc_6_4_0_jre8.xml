@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mssql-jdbc-6.4.0.jre8">
+    <CLASSES>
+      <root url="jar://D:/Program Files/Microsoft JDBC Driver 6.4 for SQL Server/sqljdbc_6.4/chs/mssql-jdbc-6.4.0.jre8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

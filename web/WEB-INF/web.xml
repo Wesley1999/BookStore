@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<!--这是此web项目的配置文件，其中包括所有Servlet页面、异常处理页面和过滤器的配置。-->
+<web-app>
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>servlet.EncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <!--过滤器拦截所有的请求 -->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>CheckFindPassword</servlet-name>
+        <servlet-class>servlet.CheckFindPassword</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckLogin</servlet-name>
+        <servlet-class>servlet.CheckLogin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckLogup</servlet-name>
+        <servlet-class>servlet.CheckLogup</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CheckLogin</servlet-name>
+        <url-pattern>/CheckLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckLogup</servlet-name>
+        <url-pattern>/CheckLogup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckFindPassword</servlet-name>
+        <url-pattern>/CheckFindPassword</url-pattern>
+    </servlet-mapping>
+
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
+</web-app>

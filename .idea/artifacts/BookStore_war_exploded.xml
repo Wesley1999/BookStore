@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="BookStore:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/BookStore_war_exploded</output-path>
+    <root id="archive" name="BookStore_war exploded.war">
+      <element id="javaee-facet-resources" facet="BookStore/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="BookStore" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mssql-jdbc-6.4.0.jre8" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
