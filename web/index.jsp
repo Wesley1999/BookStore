@@ -50,13 +50,18 @@
 <%--下面是公共界面--%>
     <HR>您可以将想要的商品添加到购物车中<BR><HR>
 <%
+
     String[] booknumbers = SelectBOOK.selectAllBooknumber();
+
     for(int i = 0;i<booknumbers.length;i++){
+
         String BOOKNUMBER = booknumbers[i];
 %>
         <img src="<%=SelectBOOK.selectUrlByBooknumber(BOOKNUMBER)%>"><BR>
 <%
-        out.print(SelectBOOK.selectNameByBooknumber(BOOKNUMBER));
+        try{        //这里不加try-catch语句会报错的原因也不清楚，以后一定不把jsp页面写这么复杂
+            out.print(SelectBOOK.selectNameByBooknumber(BOOKNUMBER));
+        }catch (Exception e){}
 %>
         <a href="addToCart.jsp?USERNUMBER=<%=USERNUMBER%>&BOOKNUMBER=<%=BOOKNUMBER%>">添加到购物车</a><BR><HR>
 <%
