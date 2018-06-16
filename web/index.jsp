@@ -59,9 +59,7 @@
 %>
         <img src="<%=SelectBOOK.selectUrlByBooknumber(BOOKNUMBER)%>"><BR>
 <%
-        try{        //这里不加try-catch语句会报错的原因也不清楚，以后一定不把jsp页面写这么复杂
-            out.print(SelectBOOK.selectNameByBooknumber(BOOKNUMBER));
-        }catch (Exception e){}
+        out.print(SelectBOOK.selectNameByBooknumber(BOOKNUMBER));
 %>
         <a href="addToCart.jsp?USERNUMBER=<%=USERNUMBER%>&BOOKNUMBER=<%=BOOKNUMBER%>">添加到购物车</a><BR><HR>
 <%
