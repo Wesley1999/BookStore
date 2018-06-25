@@ -12,7 +12,7 @@ public class SelectCART {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         Connection conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=BookStore;user=wsg;password=123456");
         Statement stat = conn.createStatement();
-        String sql = "USE BookStore SELECT NUMBER FROM CART WHERE USERNUMBER="+USERNUMBER+" AND BOOKNUMBER="+BOOKNUMBER;
+        String sql = "USE BookStore SELECT NUMBER FROM CART WHERE USERNUMBER='"+USERNUMBER+"' AND BOOKNUMBER="+BOOKNUMBER;
         System.out.println("\nSQL语句为："+sql);
         ResultSet rs = stat.executeQuery(sql);
         if(rs.next()){
@@ -35,7 +35,7 @@ public class SelectCART {
 
         //下面这段代码用来查找数据库中商品的数目，进而确定该方法返回的字符串数组的元素个数s
         Statement stat0 = conn.createStatement();
-        ResultSet rs0=stat0.executeQuery("SELECT COUNT(*) AS LINES FROM CART WHERE USERNUMBER="+USERNUMBER);
+        ResultSet rs0=stat0.executeQuery("SELECT COUNT(*) AS LINES FROM CART WHERE USERNUMBER='"+USERNUMBER+"'");
         if(rs0.next()){
             String LINES = rs0.getString("LINES");
             System.out.print(LINES);
@@ -46,7 +46,7 @@ public class SelectCART {
         stat0.close();
 
         Statement stat = conn.createStatement();
-        String sql = "USE BookStore SELECT BOOKNUMBER FROM CART WHERE USERNUMBER="+USERNUMBER;
+        String sql = "USE BookStore SELECT BOOKNUMBER FROM CART WHERE USERNUMBER='"+USERNUMBER+"'";
         System.out.println("\nSQL语句为："+sql);
         ResultSet rs = stat.executeQuery(sql);
         String[] BOOKNUMBER = new String[s];    //s是通过前面一次查找得到的
